@@ -1,0 +1,22 @@
+Alli McDermitt
+Program 5: Netlog 
+CS3411 Spring 2025
+
+As far as I can tell, the program works perfectly — I've tested logging with multiple clients,
+and tried to cause every race condition I can think of (log while another client is listing, 
+two clients listing, etc.). I would have liked to include some more quality-of-life stuff, namely
+some kind of mode indicator beyond the last command, so that one can tell whether or not the
+program still has more blocks to list; however, I didn't want to get too far away from the spec
+as written, and as exams approach, I need to tell myself not to overthink things more than I must.
+Because, to a certain extent, I must.
+
+♥
+
+Addendum for Github: This program creates a TCP server, which accepts a number of messages from
+its connected clients, and when a client requests, prints the entire list of messages in blocks
+to the requesting client. This allows it to function as a simple network-enabled logger for 
+storing data from a series of client connections.
+
+Similarly to Program 4, this program's specification asked for the program to be completed in 9 
+steps, which are again included in full, and will be built by the Makefile — however, only 
+"logger.c" contains the source needed for full functionality.

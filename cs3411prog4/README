@@ -1,0 +1,25 @@
+Alli McDermitt
+Program 4: Prose
+CS3411 Spring 2025
+
+The program works on every case I've tested it on. It's pretty straightforward, so I skipped the
+Shell scripts this time around, but I tested it on (among other things) a simple 'cat' of the 
+150KB+ FGSA file from the last program, which I'm fairly confident has enough non-printables and
+opportunities for race conditions to thoroughly test my work here.
+
+I've included all of the steps, just in case there's something I missed. I also figure I should
+mention that I completed the extra-credit specification: it only opens/creates files that the
+supplied program needs to print to. In order to do this, I had to get a bit creative with my
+functions and structs, so I've included more comments than usual, just to make it apparent what
+exactly is going on.
+
+♥
+
+Addendum for Github: This program is essentially a simple reimplementation of the Linux command
+"script". It runs a given program executable, and prints all the inputs and outputs of the process
+to files. As part of the extra-credit specification, it doesn't create/open files it doesn't need
+to; for example, if the given process never outputs to STDERR, it won't create a file for it.
+
+This program's specification asked for the program to be completed in 6 steps, which are included
+in full, and will be built by the Makefile — however, only "prose.c" contains the source needed for
+full functionality.

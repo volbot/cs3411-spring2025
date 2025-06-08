@@ -1,0 +1,41 @@
+Alli "Maybe you should ask _pointers_ if they know how _I_ work." McDermitt
+Program 2: Tar Archiver
+CS3411 Spring 2025
+
+The program works on everything I've tested it for. I'm pretty sure I hit every major edge case.
+I've tested for:
+ - 3 file ctar (one header file, minus one) and subsequent utar
+ - 4 file ctar (one header file exactly) and subsequent utar
+ - 5 file ctar (two header files) and subsequent utar
+ - 50 file ctar and subsequent utar
+ - 3 file ctar and 1 append (append into first header) and subsequent utar
+ - 4 file ctar and 1 append (append into new header) and subsequent utar
+ - 5 file ctar and 1 append (append into second existing header) and subsequent utar
+ - 50 file ctar, 50 file append, and subsequent utar
+ - empty ctar, 6 file append, and subsequent utar
+ - delete file from first header and subsequent utar
+ - delete file from second header and subsequent utar
+ - delete everything from two headers and subsequent utar
+
+The commands with which I tested all of these are available in my shell testing suite, `test.sh`,
+which I've graciously included. It's admittedly bit overkill for this purpose, which I only
+mention because the syntax over there can be confusing, but it is all there, and it would be 
+needlessly time-consuming to rewrite them all here if they're all there too. It also leaves the
+test folders in place, so if it's really that confusing, just run the script, and you can see for
+yourself the whole series of outputs.
+
+I also tested single file ctar+utar and empty ctar+utar, but didn't make test cases for them.
+We live and we learn.
+
+I've also tested pretty much all of the possible error messages, but I think a few of them may 
+have become vestigial as I cleared up edge cases in the end phases of development. And finally,
+I've valgrind-ed (valground?) pretty much every case I could think of.
+
+♥
+
+Addendum for Github: This is a file archiver, which uses two files: "ctar" creates ctar files, and
+"utar" retrieves the files from within. "ctar" can also append and remove files to preexisting
+.ctar files. There is no actual compression of the files, but the archiving capabilites are
+completely functional, as far as the 12 test cases are concerned.
+
+This folder also includes a Shell script, "test.sh", to test basic functionality.

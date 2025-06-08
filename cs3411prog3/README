@@ -1,0 +1,30 @@
+Alli McDermitt
+Program 3: Compressing Files
+CS3411 Spring 2025
+
+The program works on every case I've tested it on — admittedly, in this busy part of the year, 
+I've only been able to test it on the provided materials, but I did so quite thoroughly using
+a modification of the Shell script testing suite I built for the last program. It works to encode
+and decode all of the test cases, and compresses at the same rates as the provided binaries.
+
+The chart below describes the measured compression ratios for encode, decode, and gzip, in that
+order. To keep it within 100 characters of width I shortened certain filenames, but they all
+follow a predictable order.
+
+COMP. RATIOS | hello.txt | const[..].txt | FGSA | encode | ->.o | ->.c | decode | ->.o | ->.c |
+-------------|-----------|---------------|------|--------|------|------|--------|------|------|
+encode       |	 0.45    |     1.00      | 1.17 |  2.04  | 1.67 | 1.01 |  2.21  | 1.74 | 1.01 |
+encode-s     |   0.45    |     1.00      | 1.17 |  2.04  | 1.67 | 1.01 |  2.21  | 1.74 | 1.01 |
+gzip         |   0.30    |     3.22      | 2.87 |  4.09  | 2.85 | 2.64 |  4.49  | 2.68 | 2.35 |
+
+♥
+
+Addendum for Github: This is a single-file compression system involving two files. "encode" will 
+create an encoded version of the file supplied through STDIN, and decode will reconstruct it and 
+print it to STDOUT. The compression ratios for the provided test files as well as the files 
+associated with the program itself are listed in the above table.
+
+Notably, this program interacts with single-bit increments, and does so quite efficiently, using
+each file's included functions.
+
+Like Program 2, this one includes a Shell script, "test.sh", to test basic functionality.

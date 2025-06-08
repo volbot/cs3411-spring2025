@@ -1,0 +1,14 @@
+Alli McDermitt
+Program 1: Tar Archiver
+CS3411 Spring 2025
+
+This program did not require a README, so I'm making one now for Github.
+
+The main goal of this program was to create a function (stored in f.c) which when called by
+another function can predictably store and retrieve data in pointers without resulting in any 
+memory leaks. It is operated by commands, which are typed as integers but are references by the
+macros in both files:
+    F_first (1) and F_last (2) allocate and free the associated memory, respectively
+    F_data_int (3), F_data_char (4) and F_data_float (5) each store their associated type
+    F_print (6) prints all of the stored data
+
